@@ -79,7 +79,7 @@ public:
         if (actualIndex - start < end - actualIndex) {
 
             for (int j = actualIndex; j > start; --j) {
-                data[j - 1] = data[j];
+                data[j - 1] = data[j]; //left shift
             }
             start++; 
         } else {
