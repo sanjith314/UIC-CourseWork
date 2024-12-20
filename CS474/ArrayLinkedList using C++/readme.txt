@@ -1,0 +1,1 @@
+The SequenceableCollction is the main file. There is a main class with a run method which will be executed when the program is run. The user can input 8 option in the console to perform the various operations. Option and will be printed in the terminal once the program starts.
