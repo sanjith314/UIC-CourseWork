@@ -9,7 +9,7 @@ private:
     int start;
     int end;
 
-    //this is the grow method that will be called to allocate the extra memory needed when inserting an element and the size limit has been reached
+    //this method will be called to allocate the extra memory needed when inserting an element and the size limit has been reached
     void grow() {
         int newCapacity = capacity * 2;
         int* newData = new int[newCapacity];
@@ -49,10 +49,10 @@ public:
             for (int j = start; j < actualIndex; ++j) {
                 data[j - 1] = data[j];
             } start--;
-            data[actualIndex - 1] = x;
+            data[actualIndex-1] = x;
         } else {
             for (int j = end; j >= actualIndex; --j) {
-                data[j + 1] = data[j];
+                data[j+1] = data[j];
             }
             end++;
             data[actualIndex] = x;
