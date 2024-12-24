@@ -1,5 +1,6 @@
 #include "Instruction.h"
 #include "ALI.h"
+#include <iostream>
 
 LdaInstruction::LdaInstruction(int addr) : Instruction("LDA"), address(addr) {}
 
@@ -28,7 +29,7 @@ LdiInstruction::LdiInstruction(int val) : Instruction("LDI"), value(val) {}
 
 void LdiInstruction::execute(ALI& ali) {
     ali.setAccumulator(value);
-    // std::cout << "val"; // printing for debugging
+    std::cout << "val";
     ali.incrementPC();
 }
 
