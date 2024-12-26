@@ -22,27 +22,29 @@ void ALI::loadInstruction(int address, const std::string& line) {
         std::string operand;
         iss >> opcode >> operand;
 
-        try { if (opcode == "LDA") {  //Added try catch for debugging an error
-            instructionMemory[address] = new LdaInstruction(std::stoi(operand));
-        } else if (opcode == "LDI") {
-            instructionMemory[address] = new LdiInstruction(std::stoi(operand));
-        } else if (opcode == "STR") {
-            instructionMemory[address] = new StrInstruction(std::stoi(operand));
-        } else if (opcode == "XCH") {
-            instructionMemory[address] = new XchInstruction();
-        } else if (opcode == "JMP") {
-            instructionMemory[address] = new JmpInstruction(std::stoi(operand));
-        } else if (opcode == "JZS") {
-            instructionMemory[address] = new JzsInstruction(std::stoi(operand));
-        } else if (opcode == "ADD") {
-            instructionMemory[address] = new AddInstruction();
-        } else if (opcode == "SUB") {
-            instructionMemory[address] = new SubInstruction();
-        } else if (opcode == "HLT") {
-            instructionMemory[address] = new HltInstruction();
-        } else if (opcode == "DEC") {
-            instructionMemory[address] = new DecInstruction();
-        } }
+        try { 
+            if (opcode == "LDA") {  //Added try catch for debugging an error
+                instructionMemory[address] = new LdaInstruction(std::stoi(operand));
+            } else if (opcode == "LDI") {
+                instructionMemory[address] = new LdiInstruction(std::stoi(operand));
+            } else if (opcode == "STR") {
+                instructionMemory[address] = new StrInstruction(std::stoi(operand));
+            } else if (opcode == "XCH") {
+                instructionMemory[address] = new XchInstruction();
+            } else if (opcode == "JMP") {
+                instructionMemory[address] = new JmpInstruction(std::stoi(operand));
+            } else if (opcode == "JZS") {
+                instructionMemory[address] = new JzsInstruction(std::stoi(operand));
+            } else if (opcode == "ADD") {
+                instructionMemory[address] = new AddInstruction();
+            } else if (opcode == "SUB") {
+                instructionMemory[address] = new SubInstruction();
+            } else if (opcode == "HLT") {
+                instructionMemory[address] = new HltInstruction();
+            } else if (opcode == "DEC") {
+                instructionMemory[address] = new DecInstruction();
+            } 
+        }
         catch (const std::invalid_argument& e) {
             std::cerr << "Invalid operand: " << operand << " in line: " << line << std::endl;
         } catch (const std::out_of_range& e) {
