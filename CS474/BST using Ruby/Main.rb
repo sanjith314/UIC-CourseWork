@@ -53,14 +53,13 @@ class BSTSet < DoubleSet
     values.uniq.each do |value|
       @root = insertValuesInBST(@root, value)
       if(@root != nil)
-        # puts("Node: " + @node.value.to_s , "Left: " + @node.left.to_s, "Right: " + @node.right.to_s)
+
       end
     end
   end
 
   def insertValuesInBST(node, value)
     return Node.new(value) if node.nil?
-
     if value < node.value
       node.left = insertValuesInBST(node.left, value)
     else
